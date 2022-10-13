@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Añadir o editar</h1>
+  <mat-form-field>
+    <mat-label>ID</mat-label>
+    <input [disabled]="edicion" matInput required placeholder="75" type="number"  [(ngModel)]="offer.id" />
+  </mat-form-field> <br />
+
+  <mat-form-field>
+    <mat-label>Titulo</mat-label>
+    <input matInput required placeholder="Nombre de la oferta" [maxLength]="60" required type="text" [(ngModel)]="offer.title" />
+  </mat-form-field> &nbsp;
+
+  <mat-form-field>
+    <mat-label>Descripción</mat-label>
+    <input matInput  placeholder="Breve descripción de la oferta" type="text" [(ngModel)]="offer.description" />
+  </mat-form-field> <br />
+
+  <mat-form-field>
+    <mat-label>Puntos</mat-label>
+    <input matInput  placeholder="50" type="number" [max]="100" required [(ngModel)]="offer.points" />
+  </mat-form-field> <br />
+
+  <mat-form-field>
+    <mat-label>Bussines ID</mat-label>
+    <input matInput  placeholder="5" type="number" [(ngModel)]="offer.businessId" />
+  </mat-form-field> <br />
+
+  <div >
+    <button style="margin: 15px" mat-raised-button id="button-action" color="primary" (click)="HandleSave()">
+      {{edicion ? 'Actualizar' : 'Guardar'}}
+    </button>
+    <button mat-raised-button id="button-action" color="warn" routerLink="/bussines/offers">
+      Cancel
+    </button>
+  </div>
+
+</div>
+
+
